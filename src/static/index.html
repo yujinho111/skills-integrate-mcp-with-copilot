@@ -39,6 +39,67 @@
         </form>
         <div id="message" class="hidden"></div>
       </section>
+
+      <section id="admin-container">
+        <h3>Staff administration</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="admin-username">Username:</label>
+            <input id="admin-username" name="username" autocomplete="username" required />
+          </div>
+          <div class="form-group">
+            <label for="admin-password">Password:</label>
+            <input id="admin-password" name="password" type="password" autocomplete="current-password" required />
+          </div>
+          <button type="submit">Sign in</button>
+        </form>
+
+        <div id="admin-panel" class="hidden">
+          <div class="admin-toolbar">
+            <p id="admin-user"></p>
+            <button id="logout-button" type="button">Sign out</button>
+          </div>
+          <div id="dashboard-summary" class="dashboard-summary">
+            <div><span>Activities</span><strong id="activity-count">0</strong></div>
+            <div><span>Registrations</span><strong id="registration-count">0</strong></div>
+            <div><span>Capacity used</span><strong id="capacity-used">0</strong></div>
+            <div><span>Total capacity</span><strong id="capacity-total">0</strong></div>
+          </div>
+          <h4>Recent registrations</h4>
+          <ul id="recent-registrations" class="admin-list"></ul>
+
+          <form id="activity-form" class="activity-form">
+            <h4 id="activity-form-title">Create activity</h4>
+            <input id="editing-activity" type="hidden" />
+            <div class="form-group">
+              <label for="admin-activity-name">Activity name:</label>
+              <input id="admin-activity-name" maxlength="100" required />
+            </div>
+            <div class="form-group">
+              <label for="admin-activity-description">Description:</label>
+              <input id="admin-activity-description" maxlength="500" required />
+            </div>
+            <div class="form-group">
+              <label for="admin-activity-schedule">Schedule:</label>
+              <input id="admin-activity-schedule" maxlength="200" required />
+            </div>
+            <div class="form-group">
+              <label for="admin-activity-capacity">Maximum participants:</label>
+              <input id="admin-activity-capacity" type="number" min="1" required />
+            </div>
+            <button id="activity-submit" type="submit">Create activity</button>
+            <button id="cancel-edit" class="secondary-button hidden" type="button">Cancel edit</button>
+          </form>
+
+          <h4>Manage activities</h4>
+          <div id="admin-activities-list"></div>
+          <div id="audit-log-container">
+            <h4>Administrative activity log</h4>
+            <ul id="activity-log" class="admin-list"></ul>
+          </div>
+        </div>
+        <div id="admin-message" class="hidden" aria-live="polite"></div>
+      </section>
     </main>
 
     <footer>
